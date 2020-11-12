@@ -1,0 +1,89 @@
+% document setup
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage[letterpaper, margin=1in]{geometry}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+\graphicspath{ {./img/} }
+\pdfsuppresswarningpagegroup=1
+
+% document body
+\begin{document}
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+    \center
+    \textsc{\LARGE Universidad de Los Lagos}\\[1.5cm]
+    \textsc{\Large Inteligencia Artifical}\\[0.5cm]
+    \HRule \\[0.4cm]
+    { \huge \bfseries Primer Parcial}\\[0.4cm]
+    \HRule \\[1.5cm]
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushleft} \large
+            \emph{Autor:}\\
+            Diego Muñoz\\
+            Cristian Oyarzo\\
+            Victor Rodriguez\\
+            Sebastian Vidal\\
+        \end{flushleft}
+    \end{minipage}
+    ~
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright} \large
+            \emph{Profesor:}\\
+            Joel Torres\\
+        \end{flushright}
+    \end{minipage}\\[2cm]
+    {\large \today}\\[2cm]
+    \includegraphics[width=100px, keepaspectratio]{icinf}\\[1cm]
+    \vfill
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section{Representación}
+
+Consideraremos un arreglo de largo 7 con 1s y 2s con un pivote en el medio representado
+por un 0. La condición inicial es la siguiente:
+
+% Estado inicial
+
+La búsqueda termina si el pivote no tiene lugar hábil de movimiento o llega a la
+estado final siguiente:
+
+% Estado final
+
+Para el movimiento, el pivote puede intercambiar lugar con celdas contiguas si estas
+cumplen con las siguientes condiciones:
+
+\begin{itemize}
+    \item Movimientos permitidos:
+        \begin{itemize}
+            \item l movimiento a la izquierda.
+            \item ll dos movimientos a la izquierda.
+            \item r movimiento a la derecha.
+            \item rr dos movimientos a la derecha.
+        \end{itemize}
+    \item Ningún movimiento puede dejar que el pivote salga del arreglo.
+    \item El pivote puede moverse hacia la izquierda solo si en esa posición hay 1s.
+    \item El pivote puede moverse hacia la derecha solo si en esa posición hay 2s.
+\end{itemize}
+
+\section{Ejemplos}
+
+% Escribir al menos 5 niveles
+
+\end{document}
