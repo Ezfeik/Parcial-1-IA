@@ -8,8 +8,7 @@ No requiere dependencias adicionales.
 
 ## Instrucciones de uso
 
-El script correrá con Deep-first search o como Best-first, para cambiar el modo de
-búsqueda cambiar `eval_heuristic` entre `True` o `False`.
+Se puede modificar el modo de búsqueda entre no informada e informada en el script `main.py` cambiando el valor de `eval_heuristic=Boolean` de la funcion `search_solution()`
 
 Para correr el script:
 
@@ -21,7 +20,7 @@ Joel Sebastian Torres Carrasco ([@profeJoel](https://github.com/profeJoel))
 
 ### Integrantes
 
-- Diego Muñoz ([@Awerito](https://gitlab.com/Awerito)) 
-- Cristian Oyarzo ([@ClownSK](https://gitlab.com/ClownSk)) 
-- Victor Rodriguez ([@Pejelagartoh](https://gitlab.com/Pejelagartoh)) 
-- Sebastian Vidal ([@Ezfeik](https://gitlab.com/Ezfeik)) 
+- Diego Muñoz ([@Awerito](https://gitlab.com/Awerito))
+- Cristian Oyarzo ([@ClownSK](https://gitlab.com/ClownSk))
+- Victor Rodriguez ([@Pejelagartoh](https://gitlab.com/Pejelagartoh))
+- Sebastian Vidal ([@Ezfeik](https://gitlab.com/Ezfeik))
