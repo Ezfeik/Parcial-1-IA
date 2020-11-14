@@ -67,15 +67,15 @@ por un 0. La condición inicial es la siguiente:
 [1, 1, 1, 0, 2, 2, 2]
 \end{lstlisting}
 
-La búsqueda termina si el pivote no tiene lugar hábil de movimiento o llega a la
-estado final siguiente:
+La búsqueda termina si el pivote no tiene lugar hábil de movimiento o llega al siguiente
+estado final:
 
 % Estado final
 \begin{lstlisting}
 # Estado Final
 [2, 2, 2, 0, 1, 1, 1]
 
-# Estado sin movimiento habil
+# Ejemplo de estado sin movimiento habil siguiente
 [1, 1, 1, 2, 2, 2, 0]
 \end{lstlisting}
 
@@ -95,6 +95,29 @@ cumplen con las siguientes condiciones:
     \item El pivote puede moverse hacia la derecha solo si en esa posición hay 2s.
 \end{itemize}
 
+\section{Algoritmo de busqueda}
+
+Para la busqueda de soluciones al problema se utilizaron los siguientes algoritmos:
+
+\begin{itemize}
+  \item Busqueda no informada: Por profundidad.
+  \item Busqueda informada: Primero el mejor.
+\end{itemize}
+
+\subsection{Heuristica}
+
+Para la heuristica se puntua el estado del nodo actual en relacion a cuantos valores coinciden al estado final.
+
+\begin{lstlisting}
+# Ejemplo de puntuacion de un estado.
+
+[1, 0, 2, 1, 1, 2, 2]
+      +1    +1        => score = 2
+[2, 2, 2, 0, 1, 1, 1]
+
+\end{lstlisting}
+
+\newpage
 \section{Ejemplos}
 
 % Escribir al menos 5 niveles
@@ -147,31 +170,39 @@ Tree print:
     [1, 1, 1, 2, 0, 2, 2]
     [1, 1, 1, 2, 2, 0, 2]
 \end{lstlisting}
-
+\newpage
 \section{Solucion}
 
 \begin{lstlisting}
-    Game board initial state:
-    [1, 1, 1, 0, 2, 2, 2]
-    ========================
-    Iterations: 38
-    [1, 1, 1, 0, 2, 2, 2]
-    [1, 1, 0, 1, 2, 2, 2]
-    [1, 1, 2, 1, 0, 2, 2]
-    [1, 1, 2, 1, 2, 0, 2]
-    [1, 1, 2, 0, 2, 1, 2]
-    [1, 0, 2, 1, 2, 1, 2]
-    [0, 1, 2, 1, 2, 1, 2]
-    [2, 1, 0, 1, 2, 1, 2]
-    [2, 1, 2, 1, 0, 1, 2]
-    [2, 1, 2, 1, 2, 1, 0]
-    [2, 1, 2, 1, 2, 0, 1]
-    [2, 1, 2, 0, 2, 1, 1]
-    [2, 0, 2, 1, 2, 1, 1]
-    [2, 2, 0, 1, 2, 1, 1]
-    [2, 2, 2, 1, 0, 1, 1]
-    [2, 2, 2, 0, 1, 1, 1]
-    ========================
+  Game board initial state:
+  [1, 1, 1, 0, 2, 2, 2]
+  ========================
+  Iterations: 34
+  [1, 1, 1, 0, 2, 2, 2]
+  [1, 1, 0, 1, 2, 2, 2]
+  [1, 1, 2, 1, 0, 2, 2]
+  [1, 1, 2, 1, 2, 0, 2]
+  [1, 1, 2, 0, 2, 1, 2]
+  [1, 0, 2, 1, 2, 1, 2]
+  [0, 1, 2, 1, 2, 1, 2]
+  [2, 1, 0, 1, 2, 1, 2]
+  [2, 1, 2, 1, 0, 1, 2]
+  [2, 1, 2, 1, 2, 1, 0]
+  [2, 1, 2, 1, 2, 0, 1]
+  [2, 1, 2, 0, 2, 1, 1]
+  [2, 0, 2, 1, 2, 1, 1]
+  [2, 2, 0, 1, 2, 1, 1]
+  [2, 2, 2, 1, 0, 1, 1]
+  [2, 2, 2, 0, 1, 1, 1]
 \end{lstlisting}
+
+\section{Observaciones}
+
+Durante el desarrollo se implementó la busqueda por anchura como busqueda no informada,
+cambiada posteriormente a busqueda por profundidad dado que la simetria del problema desarrollaba en
+anchura un arbol extenso, en cambio en profundidad este se reducia a menos de la mitad.
+
+Comparando los resultados entre ambas busquedas implementadas (no informada e informada),
+se pudo observar que la busqueda informada realizó menos iteraciones que la no informada (34 vs 38 iteraciones).
 
 \end{document}
