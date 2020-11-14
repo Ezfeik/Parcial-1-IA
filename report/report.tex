@@ -7,6 +7,7 @@
 \usepackage{amsmath, amssymb}
 \usepackage[colorlinks=false]{hyperref}
 \usepackage[letterpaper, margin=1in]{geometry}
+\setlength{\parindent}{0in}
 
 % figure support
 \usepackage{import}
@@ -62,11 +63,21 @@ Consideraremos un arreglo de largo 7 con 1s y 2s con un pivote en el medio repre
 por un 0. La condición inicial es la siguiente:
 
 % Estado inicial
+\begin{lstlisting}
+[1, 1, 1, 0, 2, 2, 2]
+\end{lstlisting}
 
 La búsqueda termina si el pivote no tiene lugar hábil de movimiento o llega a la
 estado final siguiente:
 
 % Estado final
+\begin{lstlisting}
+# Estado Final
+[2, 2, 2, 0, 1, 1, 1]
+
+# Estado sin movimiento habil
+[1, 1, 1, 2, 2, 2, 0]
+\end{lstlisting}
 
 Para el movimiento, el pivote puede intercambiar lugar con celdas contiguas si estas
 cumplen con las siguientes condiciones:
@@ -74,10 +85,10 @@ cumplen con las siguientes condiciones:
 \begin{itemize}
     \item Movimientos permitidos:
         \begin{itemize}
-            \item l movimiento a la izquierda.
-            \item ll dos movimientos a la izquierda.
-            \item r movimiento a la derecha.
-            \item rr dos movimientos a la derecha.
+            \item ``l'' movimiento a la izquierda.
+            \item ``ll'' dos movimientos a la izquierda.
+            \item ``r'' movimiento a la derecha.
+            \item ``rr'' dos movimientos a la derecha.
         \end{itemize}
     \item Ningún movimiento puede dejar que el pivote salga del arreglo.
     \item El pivote puede moverse hacia la izquierda solo si en esa posición hay 1s.
