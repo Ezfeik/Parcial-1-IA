@@ -2,18 +2,18 @@
 
 Ejercicio de programación parcial 1 de inteligencia artificial.
 
-## Instrucciones de uso
+## Dependencias
 
 No requiere dependencias adicionales.
 
-Se puede modificar el modo de búsqueda en el script `main.py` comentando las lineas con
-la variable `search_mode`.
+## Instrucciones de uso
+
+El script correrá con Deep-first search o como Best-first, para cambiar el modo de
+búsqueda cambiar `eval_heuristic` entre `True` o `False`.
 
 Para correr el script:
 
     $ python3 main.py
-
-
 
 ### Profesor
 
